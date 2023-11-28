@@ -34,3 +34,8 @@ cat dns-resolving.txt | httpx -sc -title -td -favicon -asn -silent -nc -o servic
 ```
 
 All done run your scans ...
+
+## Subdomain Takeover
+```
+subzy run --targets subdomain-permutation.txt --hide_fails --https --timeout 10 | notify
+```
