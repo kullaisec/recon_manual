@@ -39,3 +39,16 @@ All done run your scans ...
 ```
 subzy run --targets subdomain-permutation.txt --hide_fails --https --timeout 10 | notify
 ```
+
+## XSS Automation oneliner
+```
+cat onsurity-final-live.txt | katana | Gxss -c 100 | dalfox pipe --skip-bav --skip-mining-all --skip-grepping 
+```
+
+## SQLi oneliner
+```
+cat subdomain-permutation.txt | dnsx | waybackurls | uro | grep "\?" | head -20 | httpx -silent > urls;sqlmap -m urls --batch --random-agent --level=1 | tee sql_sara.txt
+```
+```
+cat subdomain-permutation.txt | dnsx | waybackurls | sort -u | gf sqli > gf_sql.txt; sqlmap -m gf_sqli.txt --batch --risk 3 --random-agent | tee -a gf_sqli.txt
+```
