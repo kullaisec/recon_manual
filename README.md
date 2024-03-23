@@ -16,7 +16,7 @@ amass enum -passive -d redacted.com -silent -nocolor | sort -u >> subdomains.txt
 I utilized the Shuffledns tool to perform Subdomain Bruteforce and saved the resulting output in a file named subdomains.txt.
 
 ```
-shuffledns -d redacted.com -r /root/tools/massdns/lists/resolvers.txt -w subdomains-top1million-5000.txt -silent -nc | sort -u >> subdomains.txt
+shuffledns -d redacted.com -r /root/tools/massdns/lists/resolvers.txt -w /root/subdomains-top1million-5000.txt -silent -nc | sort -u >> subdomains.txt
 ```
 In the Subdomain Permutation step, I used the Altrex tool to create a new list of subdomains with permutations.
 
